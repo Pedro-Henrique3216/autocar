@@ -105,9 +105,9 @@ export default function CadastroUsuarioForm() {
                     } else if(mensagem.includes("cpf")){
                         newError.cpf = "cpf invalido"
                     } else if(mensagem.includes("cep")){
-                        newError.cpf = "cep invalido"
+                        newError.cep = "cep invalido"
                     } else if(mensagem.includes("numero")){
-                        newError.cpf = "numero invalido"
+                        newError.numero = "numero invalido"
                     }
                     setErrors(newError)
                 }

@@ -1,14 +1,14 @@
 "use client"
 import { Carro, Diagnostico, DiagnosticoComplete } from "@/type"
-import { use, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import InformacoesVeiculo from "./components/InformacoesVeiculo"
 import Link from "next/link"
 import Carrosel from "./components/Carrosel"
 import DiagnoticoComplete from "./components/DiagnosticoComplete"
 
-export default function Veiculo({ params }: { params: Promise<{ id: number }> }) {
+export default function Veiculo({ params }: { params: { id: number } }) {
 
-  const { id } = use(params)
+  const id  = Number(params.id)
 
   const [carro, setCarro] = useState<Carro>({
     id: 0, data: "", marca: "", modelo: "", placa: ""

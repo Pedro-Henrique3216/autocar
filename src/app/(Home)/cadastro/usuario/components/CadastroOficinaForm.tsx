@@ -166,7 +166,7 @@ export default function CadastroOficinaForm() {
                 </div>
 
                 <div className="w-2/3">
-                    <label className="mb-5">NUMERO  <span className="text-red-600">*</span></label>
+                    <label className="mb-5">NUMERO DA CASA <span className="text-red-600">*</span></label>
                     <input type="number" name="numero" placeholder="Digite seu numero" className="formulario_cadastro" onChange={cadastroChange}/>
                     {errors.numero && <p className="text-red-700 m-2">{errors.numero}</p>}
                 </div>

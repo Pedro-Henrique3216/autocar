@@ -7,6 +7,15 @@ import diagnostico from "@/imagem/diagnostico.jpg"
 import economia from "@/imagem/economia.jpg"
 import tecnologia from "@/imagem/tecnologia.jpg"
 import Header from "@/components/Header";
+import Colaborador from "@/components/Colaborador";
+import fotoPedro from "@/imagem/fotos_contribuidores/foto_pedro.jpg"
+import fotoThiago from "@/imagem/fotos_contribuidores/foto_thiago.jpg"
+import IconeGitHub from "@/imagem/github.png"
+import IconeFigma from "@/imagem/iconeFigma.webp"
+import Link from "next/link";
+import Image from "next/image";
+
+
 
 export default function Home() {
 
@@ -29,6 +38,15 @@ export default function Home() {
               </div>
             </section >
             <SobreNos />
+            <h2 className="text-center font-bold md:text-3xl">Desenvolvedores</h2>
+            <div className="flex flex-col md:flex-row gap-5 p-4">
+              <Colaborador imagem={fotoPedro} link_github="https://github.com/Pedro-Henrique3216" nome="Pedro Henrique dos Santos" rm={559064} />
+              <Colaborador imagem={fotoThiago} link_github="https://github.com/ThiagoThmaz" nome="Thiago Thomaz" rm={557992} />
+            </div>
+            <section className="flex flex-col gap-5" id="desenvolvedores">
+                <Link className="flex items-center justify-center gap-4 m-auto md:text-3xl hover:text-blue-500" href="https://github.com/Challenge-Porto-Seguro/Challenge_Porto_Seguro" target="_blank"><Image className="w-1/12" src={IconeGitHub} alt="icone do github" />Link do Projeto no GitHub</Link>
+                <Link className="flex items-center justify-center gap-4 m-auto md:text-3xl hover:text-blue-500" href="https://www.figma.com/team_invite/redeem/853grbCAf7qkMOEln39byr" target="_blank"><Image className="w-1/12" src={IconeFigma} alt="icone do figma" />Link do Projeto no Figma</Link>
+            </section>
         </main>
     )
 }

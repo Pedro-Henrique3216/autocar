@@ -56,6 +56,17 @@ Para iniciar o projeto, primeiro devemos iniciar o backend Java. Certifique-se d
 
 E o backend já estará rodando!
 
+## Vercel
+
+![image](https://github.com/user-attachments/assets/8352bdbc-2adb-42c0-b13c-7d57badd85e7)
+- Para usar No Vercel demovemos abrir config e entrar em corsFilter
+
+![image](https://github.com/user-attachments/assets/337c124d-4a6b-4fcb-830f-80698540ba3b)
+- trocar http://localhost:3000 para a url do Vercel que é https://autocar-fawn.vercel.app
+
+### Apos isso dar um reload no projeto
+
+
 ## Objetivo do Projeto
 
 O objetivo do nosso projeto é desenvolver um software que permita aos usuários realizar diagnósticos e orçamentos de seus veículos por meio de uma Inteligência Artificial, tudo isso sem precisar sair de casa. Isso facilita a manutenção dos veículos e proporciona uma experiência de usuário mais conveniente.

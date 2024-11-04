@@ -29,6 +29,11 @@ export default function Header() {
                             Sobre nos
                         </Link>
                     </li>
+                    <li className="hidden md:inline uppercase hover:text-blue-700 md:text-md lg:text-xl">
+                        <Link href="#desenvolvedores">
+                            Desenvolvedores
+                        </Link>
+                    </li>
                 </div>
                 <li><Link className="border p-1 border-blue-600 uppercase font-semibold hover:bg-blue-400 text-sm md:border-2 lg:p-2 lg:text-xl" href="/login">Area do Cliente</Link></li>
             </ul>

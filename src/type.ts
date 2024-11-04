@@ -178,3 +178,10 @@ export type ProcessedTextResponse = {
     preco: number
     quantidade: number
   }
+
+  export interface ListaColaboradores {
+    imagem:StaticImageData;
+    nome:string;
+    rm:number;
+    link_github:string
+}

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  @apply flex flex-col min-h-screen box-border
+}
+
+.formulario_cadastro {
+  @apply w-full p-3 bg-blue-200 placeholder:text-black rounded-md
+}
+
+.home__sobre-nos--paragrafo {
+  @apply m-2 indent-2 text-xl tracking-wider font-medium
+}
+
+

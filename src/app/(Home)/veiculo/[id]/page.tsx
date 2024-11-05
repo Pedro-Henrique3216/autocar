@@ -23,7 +23,7 @@ export default function Veiculo({ params }: { params: { id: number } }) {
   useEffect(
     () => {
         const chamadaApi = async () => {
-            const response = await fetch(`http://localhost:8080/Java_war/api/automovel/${id}`)
+            const response = await fetch(`https://meuprojeto.link/autodiag/api/automovel/${id}`)
             const data = await response.json()
             const car = {
               id: data.id,
@@ -46,7 +46,7 @@ export default function Veiculo({ params }: { params: { id: number } }) {
   useEffect(() => {
     const puxarDiagnostico = async () => {
         try{
-            const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/buscar_todos/${sessionStorage.getItem("id")}`)
+            const response = await fetch(`https://meuprojeto.link/autodiag/api/diagnostico/buscar_todos/${sessionStorage.getItem("id")}`)
             if (response.ok) {
                 const data = await response.json();
                 
@@ -77,7 +77,7 @@ export default function Veiculo({ params }: { params: { id: number } }) {
       
       const puxarDiagnostico = async () => {
         try {
-          const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/${idDiagnostico}`);
+          const response = await fetch(`https://meuprojeto.link/autodiag/api/diagnostico/${idDiagnostico}`);
           if (response.ok) {
             const data = await response.json();
             const diagnosticoData = {
@@ -118,7 +118,7 @@ export default function Veiculo({ params }: { params: { id: number } }) {
                 }
             };
             
-            const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/${idDiagnostico}`, cabecalho);
+            const response = await fetch(`https://meuprojeto.link/autodiag/api/diagnostico/${idDiagnostico}`, cabecalho);
     
             if (response.ok) {
                 reload()

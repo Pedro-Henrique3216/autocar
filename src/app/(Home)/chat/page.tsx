@@ -115,7 +115,7 @@ export default function Chat(){
   useEffect(
     () => {
         const chamadaApi = async () => {
-            const response = await fetch(`http://localhost:8080/Java_war/api/oficina`)
+            const response = await fetch(`https://meuprojeto.link/autodiag/api/oficina`)
             const data = await response.json()        
             const oficinas = []
             for(let i = 0; i < data.length; i++){
@@ -271,7 +271,7 @@ export default function Chat(){
                 body: JSON.stringify(diagnostico)
             };
             
-            const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico`, cabecalho);
+            const response = await fetch(`https://meuprojeto.link/autodiag/api/diagnostico`, cabecalho);
     
             if (response.ok) {
                 const cd_automovel = sessionStorage.getItem("cd_automovel")

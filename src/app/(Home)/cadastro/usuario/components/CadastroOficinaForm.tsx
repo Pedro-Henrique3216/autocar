@@ -94,7 +94,7 @@ export default function CadastroOficinaForm() {
                     body: JSON.stringify(oficina)
                 };
                 
-                const response = await fetch(`http://localhost:8080/Java_war/api/oficina`, cabecalho);
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/oficina`, cabecalho);
         
                 if (response.ok) {
                     const data = await response.json()

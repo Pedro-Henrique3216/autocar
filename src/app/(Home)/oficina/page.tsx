@@ -36,7 +36,7 @@ export default function Oficina() {
             const usuarioLogado = sessionStorage.getItem("id")
             if(usuarioLogado){
                 try{
-                    const response = await fetch(`http://localhost:8080/Java_war/api/oficina/${usuarioLogado}`)
+                    const response = await fetch(`https://meuprojeto.link/autodiag/api/oficina/${usuarioLogado}`)
                     if(response.ok){
                         const data = await response.json()
                         const oficina:OficinaRequest = {
@@ -70,7 +70,7 @@ export default function Oficina() {
     useEffect(() => {
         const puxarDiagnostico = async () => {
             try{
-                const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/buscar_todos/oficina/${sessionStorage.getItem("id")}`)
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/diagnostico/buscar_todos/oficina/${sessionStorage.getItem("id")}`)
                 if (response.ok) {
                     const data = await response.json();
                     const diagnosticoList = []
@@ -105,7 +105,7 @@ export default function Oficina() {
         if (open && idDiagnostico) {
           const puxarDiagnostico = async () => {
             try {
-              const response = await fetch(`http://localhost:8080/Java_war/api/diagnostico/${idDiagnostico}`);
+              const response = await fetch(`https://meuprojeto.link/autodiag/api/diagnostico/${idDiagnostico}`);
               if (response.ok) {
                 const data = await response.json();
                 const diagnosticoData = {

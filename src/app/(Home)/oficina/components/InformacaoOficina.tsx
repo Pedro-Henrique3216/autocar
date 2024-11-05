@@ -89,7 +89,7 @@ export default function InformacaoOficina({nome, cnpj, inscricaoEstadual, email,
                     body: JSON.stringify(oficina)
                 };
                 
-                const response = await fetch(`http://localhost:8080/Java_war/api/oficina/${sessionStorage.getItem("id")}`, cabecalho);
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/oficina/${sessionStorage.getItem("id")}`, cabecalho);
         
                 if (response.ok) {
                     window.location.reload();

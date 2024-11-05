@@ -60,7 +60,7 @@ export default function CamposLogin({erro, clearErro} : {erro:() => void, clearE
                     body: JSON.stringify(user)
                 };
                 
-                const response = await fetch(`http://localhost:8080/Java_war/api/login`, cabecalho);
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/login`, cabecalho);
         
                 if (response.ok) {
                     const data = await response.json()

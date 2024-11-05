@@ -84,7 +84,7 @@ export default function InformacaoUsuario({nome, cpf, email, senha, bairro, cep,
                     body: JSON.stringify(user)
                 };
                 
-                const response = await fetch(`http://localhost:8080/Java_war/api/user/${sessionStorage.getItem("id")}`, cabecalho);
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/user/${sessionStorage.getItem("id")}`, cabecalho);
         
                 if (response.ok) {
                     window.location.reload();

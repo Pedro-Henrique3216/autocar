@@ -87,7 +87,7 @@ export default function CadastroUsuarioForm() {
                     body: JSON.stringify(user)
                 };
                 
-                const response = await fetch(`http://localhost:8080/Java_war/api/user`, cabecalho);
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/user`, cabecalho);
         
                 if (response.ok) { 
                     const data = await response.json()

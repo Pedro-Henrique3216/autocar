@@ -97,7 +97,7 @@ export default function InformacoesVeiculo({id, marca, modelo, placa, data, relo
                     body: JSON.stringify(car)
                 };
                 
-                const response = await fetch(`http://localhost:8080/Java_war/api/automovel/${id}`, cabecalho);
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/automovel/${id}`, cabecalho);
         
                 if (response.ok) {
                     reload()

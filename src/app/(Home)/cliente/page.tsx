@@ -42,7 +42,7 @@ export default function Cliente() {
             
             if(usuarioLogado){
                 try{
-                    const response = await fetch(`http://localhost:8080/Java_war/api/user/${usuarioLogado}`)
+                    const response = await fetch(`https://meuprojeto.link/autodiag/api/user/${usuarioLogado}`)
                     const data = await response.json()
                     const user:User = {
                         nome: data["nome"],
@@ -72,7 +72,7 @@ export default function Cliente() {
     useEffect(() => {
         const puxarCarros = async () => {
             try{
-                const response = await fetch(`http://localhost:8080/Java_war/api/automovel?userId=${sessionStorage.getItem("id")}`)
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/automovel?userId=${sessionStorage.getItem("id")}`)
                 if (response.ok) {
                     const data = await response.json();
                     
@@ -160,7 +160,7 @@ export default function Cliente() {
                     body: JSON.stringify(carro)
                 };
                 
-                const response = await fetch(`http://localhost:8080/Java_war/api/automovel`, cabecalho);
+                const response = await fetch(`https://meuprojeto.link/autodiag/api/automovel`, cabecalho);
         
                 if (response.ok) {
                     alert("Carro cadastrado")

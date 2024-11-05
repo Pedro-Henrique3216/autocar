@@ -32,9 +32,11 @@ export default function Veiculo({ params }: { params: { id: number } }) {
               modelo: data.modelo,
               placa: data.placa
             }   
-            setCarro(car)
+            setCarro(car)   
         }
-        chamadaApi()
+        setTimeout(() => {
+          chamadaApi();
+      }, 500);
     }, [id])
 
     const reload = ()=> {
@@ -71,8 +73,6 @@ export default function Veiculo({ params }: { params: { id: number } }) {
 
   useEffect(() => {
     const idDiagnostico = sessionStorage.getItem("id_diagnostico");
-    console.log(idDiagnostico);
-    
     if (open && idDiagnostico) {
       
       const puxarDiagnostico = async () => {
@@ -93,9 +93,7 @@ export default function Veiculo({ params }: { params: { id: number } }) {
               quantidade: data.produtos[0].quantidade,
               valorTotal: data.valorTotal,
             };
-            setDiagnostico(diagnosticoData);
-            console.log(diagnosticoData);
-            
+            setDiagnostico(diagnosticoData)  
           } else {
             console.error("Erro ao buscar diagnóstico:", response.status);
           }

@@ -133,6 +133,8 @@ export default function Chat(){
 
     const navigation = useRouter()
 
+    const [pecaDesc, setPecaDesc] = useState({peca: "", descricao: ""})
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -154,7 +156,7 @@ export default function Chat(){
     const respTimeStamp = getFormattedTime()
 
     const precos = [
-      {peca: "bateria", preco: 500, quantidade: 1},
+      {peca: "bateria", preco: 50, quantidade: 1},
       {peca: "ingnição", preco: 250, quantidade: 1},
       {peca: "radiador", preco: 250, quantidade: 1},
       {peca: "carburador", preco: 450, quantidade: 1},
@@ -165,58 +167,49 @@ export default function Chat(){
     ]
     
     const resp: ProcessedApiResponse[] = processApiResponse(responseAPI)
-    let descricao = ""
-    let peca = ""
     if (
       'content' in resp[0] &&
       resp[0].content ===
         'Seu carro tem um problema na bateria'
     ) {
     
-     peca = "bateria"
-     descricao = resp[0].content
+     setPecaDesc({peca:"bateria", descricao:resp[0].content}) 
     } else if(
       'content' in resp[0] &&
       resp[0].content ===
         'O veiculo deve estar com problema na ingnição'
     ) {
-      peca = "ingnição"
-      descricao = resp[0].content
+      setPecaDesc({peca:"ingnição", descricao:resp[0].content}) 
      } else if(
       'content' in resp[0] &&
       resp[0].content ===
         'O seu veiculo pode estar superaquecendo, verifique o nível de agua do radiador'
     ) {
-      peca = "radiador"
-      descricao = resp[0].content
+      setPecaDesc({peca:"radiador", descricao:resp[0].content}) 
      } else if(
       'content' in resp[0] &&
       resp[0].content ===
         'Pode ser um problema no carburador'
     ) {
-      peca = "carburador" 
-      descricao = resp[0].content
+      setPecaDesc({peca:"carburador", descricao:resp[0].content}) 
      } else if(
       'content' in resp[0] &&
       resp[0].content ===
         'O cilindro mestre esta com defeito'
     ) {
-      peca = "cilindro mestre"
-      descricao = resp[0].content
+      setPecaDesc({peca:"cilindro mestre", descricao:resp[0].content}) 
      } else if(
       'content' in resp[0] &&
       resp[0].content ===
         'Se seu carro esta tremendo muito deve ser um problema no pneu'
     ) {
-      peca = "pneu"
-      descricao = resp[0].content
+      setPecaDesc({peca:"pneu", descricao:resp[0].content}) 
      } else if(
       'content' in resp[0] &&
       resp[0].content ===
         'Se seu carro esta fazendo um barulho estranho deve ser o escapamento'
     ) {
-      peca = "escapamento"
-      descricao = resp[0].content
+      setPecaDesc({peca:"escapamento", descricao:resp[0].content}) 
      }
      
      if (resp.length > 1 && resp.length <= 3) {
@@ -233,18 +226,18 @@ export default function Chat(){
         })
         setSelecionarOficina(true)
       } 
-      }
+      } 
       if ('content' in resp[0] &&
         resp[0].content?.includes("Verificando se possive cadastrar diagnostico")) {
         const cd_automovel = Number(sessionStorage.getItem("cd_automovel"));
         const data = new Date().toLocaleDateString('pt-BR');
-        const dados = precos.find(x => x.peca === peca);
+        const dados = precos.find(x => x.peca === pecaDesc.peca);
         setDiagnostico({
           cd_automovel,
-          descricao,
+          descricao: pecaDesc.descricao,
           dt_inicio: data,
           cd_oficina: oficina.id,
-          peca,
+          peca: pecaDesc.peca,
           preco: dados ? dados.preco : 0,
           quantidade: dados ? dados.quantidade : 1
         })

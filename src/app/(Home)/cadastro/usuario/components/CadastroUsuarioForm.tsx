@@ -78,7 +78,6 @@ export default function CadastroUsuarioForm() {
         
         try {
             if(validaFormulario()){
-            
                 const cabecalho = {
                     method: "POST",
                     headers: {
@@ -90,7 +89,7 @@ export default function CadastroUsuarioForm() {
                 
                 const response = await fetch(`http://localhost:8080/Java_war/api/user`, cabecalho);
         
-                if (response.ok) {
+                if (response.ok) { 
                     const data = await response.json()
                     sessionStorage.setItem("id", data.id)
                     navigate.push("/cliente")
